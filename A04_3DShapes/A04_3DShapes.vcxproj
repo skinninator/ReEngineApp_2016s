@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{769F0154-10DA-4627-8772-CE84597ECDCE}</ProjectGuid>
+    <ProjectGuid>{F01E3209-CFB0-43C7-ACB1-3904F51143CB}</ProjectGuid>
     <RootNamespace>A04_3DShapes</RootNamespace>
     <ProjectName>A04_3DShapes</ProjectName>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
