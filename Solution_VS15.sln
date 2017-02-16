@@ -41,7 +41,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other", "Other", "{30329165
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "E06_Transformations", "E06_Transformations\E06_Transformations.vcxproj", "{CFC5A13E-27EB-44AB-A562-CADF4D45A21C}"
 EndProject
+<<<<<<< HEAD
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "A04_3DShapes", "\\banner.main.ad.rit.edu\students\fy3881\IGMProfile\Documents\ReEngineApp_2016s\A04_3DShapes\A04_3DShapes.vcxproj", "{F01E3209-CFB0-43C7-ACB1-3904F51143CB}"
+=======
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "E05s_Repository", "E05s_Repository\E05s_Repository.vcxproj", "{2DD9F919-629E-43B6-9B81-181B2F761873}"
+>>>>>>> bbf3363a3dca26ac1d3e76d5d825d68c898dbe88
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,10 +101,17 @@ Global
 		{CFC5A13E-27EB-44AB-A562-CADF4D45A21C}.Debug|x86.Build.0 = Debug|Win32
 		{CFC5A13E-27EB-44AB-A562-CADF4D45A21C}.Release|x86.ActiveCfg = Release|Win32
 		{CFC5A13E-27EB-44AB-A562-CADF4D45A21C}.Release|x86.Build.0 = Release|Win32
+<<<<<<< HEAD
 		{F01E3209-CFB0-43C7-ACB1-3904F51143CB}.Debug|x86.ActiveCfg = Debug|Win32
 		{F01E3209-CFB0-43C7-ACB1-3904F51143CB}.Debug|x86.Build.0 = Debug|Win32
 		{F01E3209-CFB0-43C7-ACB1-3904F51143CB}.Release|x86.ActiveCfg = Release|Win32
 		{F01E3209-CFB0-43C7-ACB1-3904F51143CB}.Release|x86.Build.0 = Release|Win32
+=======
+		{2DD9F919-629E-43B6-9B81-181B2F761873}.Debug|x86.ActiveCfg = Debug|Win32
+		{2DD9F919-629E-43B6-9B81-181B2F761873}.Debug|x86.Build.0 = Debug|Win32
+		{2DD9F919-629E-43B6-9B81-181B2F761873}.Release|x86.ActiveCfg = Release|Win32
+		{2DD9F919-629E-43B6-9B81-181B2F761873}.Release|x86.Build.0 = Release|Win32
+>>>>>>> bbf3363a3dca26ac1d3e76d5d825d68c898dbe88
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +129,10 @@ Global
 		{F5D6D2E1-6FFD-402B-8EE3-DED4FE407028} = {77A006BE-0096-461D-AC30-32ECAA2B3FDA}
 		{D50EA787-1AD4-44AC-A230-3304FFB04F82} = {77A006BE-0096-461D-AC30-32ECAA2B3FDA}
 		{CFC5A13E-27EB-44AB-A562-CADF4D45A21C} = {0B1C8EE7-E852-45B2-A546-BE37B521048A}
+<<<<<<< HEAD
 		{F01E3209-CFB0-43C7-ACB1-3904F51143CB} = {0B1C8EE7-E852-45B2-A546-BE37B521048A}
+=======
+		{2DD9F919-629E-43B6-9B81-181B2F761873} = {0B1C8EE7-E852-45B2-A546-BE37B521048A}
+>>>>>>> bbf3363a3dca26ac1d3e76d5d825d68c898dbe88
 	EndGlobalSection
 EndGlobal
