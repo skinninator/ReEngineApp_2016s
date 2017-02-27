@@ -1,7 +1,7 @@
 #include "AppClass.h"
 void AppClass::InitWindow(String a_sWindowName)
 {
-	super::InitWindow("W5R_Rotations_DEMO"); // Window Name
+	super::InitWindow("Sandbox"); // Window Name
 
 	// Set the clear color based on Microsoft's CornflowerBlue (default in XNA)
 	//if this line is in Init Application it will depend on the .cfg file, if it
@@ -22,7 +22,14 @@ void AppClass::InitVariables(void)
 		vector3(0.0f, 2.5f, 0.0f),//What Im looking at
 		REAXISY);//What is up
 	//Load a model onto the Mesh manager
-	m_pMeshMngr->LoadModel("Minecraft\\Steve.obj", "Steve");
+	m_pMeshMngr->LoadModel("Lego\\Unikitty.bto", "Unikitty");
+	m_pCameraMngr->SetPosition(vector3(0.0f, 0.0f, 35.0f));
+	srand(time(NULL));
+	m_nObjects = rand() % 23 + 5;
+	vector3 v3Start = vector3(-m_nObjects, 0.0f, 0.0f);
+	vector3 v3End = vector3(m_nObjects, 0.0f, 0.0f);
+
+	ObjectPointer = new ObjectType[m_nObjects];
 }
 
 void AppClass::Update(void)
@@ -41,15 +48,8 @@ void AppClass::Update(void)
 	ArcBall();
 	
 	//Set the model matrix for the first model to be the arcball
-	//m_pMeshMngr->SetModelMatrix(ToMatrix4(m_qArcBall), 0);
-
-	m_m4Steve = glm::scale(m_m4Steve, vector3(1.01f, 1.01f, 1.5f));
-	m_m4Steve = glm::rotate(m_m4Steve, 1.0f, vector3(0.0f, 1.0f, 0.0f));
-	m_m4Steve = glm::rotate(IDENTITY_M4, m_v3Orientation.x, vector3(1.0f, 0.0f, 0.0f));
-	m_m4Steve = glm::rotate(m_m4Steve, m_v3Orientation.y, vector3(0.0f, 1.0f, 0.0f));
-	m_m4Steve = glm::rotate(m_m4Steve, m_v3Orientation.z, vector3(0.0f, 0.0f, 1.0f));
-	m_pMeshMngr->SetModelMatrix(m_m4Steve, "Steve");
-
+	m_pMeshMngr->SetModelMatrix(ToMatrix4(m_qArcBall), 0);
+	
 	//Adds all loaded instance to the render list
 	m_pMeshMngr->AddSkyboxToRenderList();
 	m_pMeshMngr->AddInstanceToRenderList("ALL");
