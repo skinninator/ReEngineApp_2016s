@@ -1,4 +1,6 @@
 #include "AppClass.h"
+#include <vector>
+
 void AppClass::InitWindow(String a_sWindowName)
 {
 	super::InitWindow("Assignment  06 - LERP"); // Window Name
@@ -28,15 +30,29 @@ void AppClass::Update(void)
 
 #pragma region Does not need changes but feel free to change anything here
 	//Lets us know how much time has passed since the last call
-	double fTimeSpan = m_pSystem->LapClock(); //Delta time (between frame calls)
+	float fTimeSpan = m_pSystem->LapClock(); //Delta time (between frame calls)
 
 	//cumulative time
-	static double fRunTime = 0.0f; //How much time has passed since the program started
+	static float fRunTime = 0.0f; //How much time has passed since the program started
 	fRunTime += fTimeSpan; 
 #pragma endregion
 
 #pragma region Your Code goes here
-	//m_pMeshMngr->SetModelMatrix(IDENTITY_M4, "WallEye");
+	//list of locations
+	std::vector<vector3> locations;
+	locations.push_back(vector3(-4.0f, -2.0f, 5.0f));
+	locations.push_back(vector3(1.0f, -2.0f, 5.0f));
+	locations.push_back(vector3(-3.0f, -1.0f, 3.0f));
+	locations.push_back(vector3(2.0f, -1.0f, 3.0f));
+	locations.push_back(vector3(-2.0f, 0.0f, 0.0f));
+	locations.push_back(vector3(3.0f, 0.0f, 0.0f));
+	locations.push_back(vector3(-1.0f, 1.0f,-3.0f));
+	locations.push_back(vector3(4.0f, 1.0f, -3.0f));
+	locations.push_back(vector3(0.0f, 2.0f, -5.0f));
+	locations.push_back(vector3(5.0f, 2.0f, -5.0f));
+	locations.push_back(vector3(1.0f, 3.0f, -5.0f));
+
+	int i = 0;
 #pragma endregion
 
 #pragma region Does not need changes but feel free to change anything here
@@ -56,13 +72,25 @@ void AppClass::Update(void)
 	float timer = timeApplication / 1000.0f; //change from milliseconds to seconds
 	m_pMeshMngr->PrintLine("Time is: " + std::to_string(timer)); //write to screen
 	
+	//Mapping values
 	matrix4 m4WallEye;
-	float timerMapped = MapValue(timer, 0.0f, 5.0f, 0.0f, 1.0f);
-	if (timerMapped > 1) {
-		timerMapped = 1.0f;
+	float timerMapped = MapValue(fRunTime, 0 + (i * fTimeSpan), 1.0f, fTimeSpan + (i * fTimeSpan), 1.0f);
+	while(timerMapped > i + 1) {
+		if (i == 11) {
+			i = 0;
+			timerMapped = 0;
+		}
+		i++;
 	}
-	vector3 v3Lerp = glm::lerp(vector3(0, 0, 0), vector3(5, 0, 0), timerMapped);
+	
+	//Lerp Function
+	vector3 v3Lerp = glm::lerp(locations[i], locations[i + 1], timerMapped);
 	m4WallEye = glm::translate(v3Lerp);
+
+	m_pMeshMngr->PrintLine(std::to_string(fRunTime));
+	m_pMeshMngr->PrintLine(std::to_string(timerMapped));
+	m_pMeshMngr->PrintLine(std::to_string(i));
+	m_pMeshMngr->PrintLine(glm::to_string(locations[i]));
 	m_pMeshMngr->SetModelMatrix(m4WallEye, "WallEye");
 
 	m_pMeshMngr->Print("FPS:");
