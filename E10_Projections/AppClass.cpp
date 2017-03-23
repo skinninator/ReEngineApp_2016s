@@ -20,6 +20,7 @@ void AppClass::InitVariables(void)
 
 void AppClass::Update(void)
 {
+
 	//Update the system's time
 	m_pSystem->UpdateTime();
 
