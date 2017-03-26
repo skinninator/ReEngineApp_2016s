@@ -34,8 +34,8 @@ void AppClass::Update(void)
 	m_pMeshMngr->SetModelMatrix(ToMatrix4(m_qArcBall), 0);
 
 	//Create the quaternions to interpolate
-	glm::quat q1 = glm::angleAxis(0.0f, vector3(0.0f, 0.0f, 1.0f));
-	quaternion q2 = glm::angleAxis(359.0f, vector3(0.0f, 0.0f, 1.0f)); //if 360 there is a div by 0 somewhere
+	glm::quat q1 = glm::angleAxis(0.0f, vector3(0.0f, 1.0f, 0.0f));
+	quaternion q2 = glm::angleAxis(359.0f, vector3(0.0f, 1.0f, 0.0f)); //if 360 there is a div by 0 somewhere
 	quaternion q3;
 	
 	static float fTimer = 0.0f; //static timer to keep track
