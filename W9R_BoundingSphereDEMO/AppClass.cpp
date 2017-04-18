@@ -1,7 +1,7 @@
 #include "AppClass.h"
 void AppClass::InitWindow(String a_sWindowName)
 {
-	super::InitWindow("Bounding Spheres DEMO");
+	super::InitWindow("Bounding Box DEMO");
 }
 
 void AppClass::InitVariables(void)
@@ -16,9 +16,9 @@ void AppClass::InitVariables(void)
 	m_pMeshMngr->LoadModel("Minecraft\\Steve.obj", "Steve");
 	m_pMeshMngr->LoadModel("Minecraft\\Cow.obj", "Cow");
 	//creating bounding spheres for both models
-	m_pBS0 = new MyBoundingSphereClass(m_pMeshMngr->GetVertexList("Zombie"));
-	m_pBS1 = new MyBoundingSphereClass(m_pMeshMngr->GetVertexList("Steve"));
-	m_pBS2 = new MyBoundingSphereClass(m_pMeshMngr->GetVertexList("Cow"));
+	m_pBS0 = new MyBoundingBoxClass(m_pMeshMngr->GetVertexList("Zombie"));
+	m_pBS1 = new MyBoundingBoxClass(m_pMeshMngr->GetVertexList("Steve"));
+	m_pBS2 = new MyBoundingBoxClass(m_pMeshMngr->GetVertexList("Cow"));
 
 	matrix4 m4Position = glm::translate(vector3(3.0, 0.0, 0.0));
 	m_pMeshMngr->SetModelMatrix(m4Position, "Steve");
@@ -57,15 +57,15 @@ void AppClass::Update(void)
 	matrix4 m4Transform = glm::translate(m_v3Position) * ToMatrix4(m_qArcBall);
 	m_pMeshMngr->SetModelMatrix(m4Transform, "Zombie"); //set the matrix to the model
 	m_pBS0->SetModelMatrix(m_pMeshMngr->GetModelMatrix("Zombie"));
-	m_pBS0->RenderSphere();//render the bounding sphere
+	m_pBS0->Render();//render the bounding sphere
 		
 
 	m_pMeshMngr->SetModelMatrix(mTranslation, "Steve");
 	m_pBS1->SetModelMatrix(m_pMeshMngr->GetModelMatrix("Steve"));
-	m_pBS1->RenderSphere();
+	m_pBS1->Render();
 
 	m_pBS2->SetModelMatrix(m_pMeshMngr->GetModelMatrix("Cow"));
-	m_pBS2->RenderSphere();
+	m_pBS2->Render();
 
 	m_pBS0->SetColliding(false);
 	m_pBS1->SetColliding(false);
