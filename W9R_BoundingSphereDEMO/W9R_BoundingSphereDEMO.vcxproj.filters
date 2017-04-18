@@ -27,7 +27,11 @@
     <ClCompile Include="MyBoundingSphereClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="MyBoundingBox.cpp">
+=======
+    <ClCompile Include="MyBoundingBoxClass.cpp">
+>>>>>>> be672c5fdf7e2c04214839dfeb33e067698a7265
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,7 +45,11 @@
     <ClInclude Include="MyBoundingSphereClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="MyBoundingBox.h">
+=======
+    <ClInclude Include="MyBoundingBoxClass.h">
+>>>>>>> be672c5fdf7e2c04214839dfeb33e067698a7265
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
